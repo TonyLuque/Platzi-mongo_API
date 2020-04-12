@@ -1,0 +1,21 @@
+{
+  "name": "platzi_mongo",
+  "version": "1.0.0",
+  "description": "API de practica de manipulacion de datos en Mongo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Anthony Luque",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.9.7"
+  }
+}
