@@ -1,16 +1,22 @@
 const express = require('express');
-const controller = require('./controller');
 const router = express.Router();
+const db = require('./db');
 
 router.get('/', (req, res) => {
-    controller.traerCursos().then(datos =>{
-        json = JSON.stringify(datos);
-        res.status(200).send(json);
-    }); 
+    db.getAll().then(datos =>{
+        console.log(req.params)
+        res.status(200).send(datos);
+    });
+});
+
+router.get('/:id', (req, res) => {
+    db.getOne(req.query.id).then(datos =>{
+        console.log(req.params)
+        res.status(200).send(datos);
+    });
 });
 
 router.post('/', (req, res) => {
-    controller.añadirCurso(req.body.user, req.body.message);
     res.send('Hola desde post');
 });
 
