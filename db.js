@@ -14,13 +14,11 @@ db.connect("mongodb://localhost:27017/platzi_mongo", {useNewUrlParser: true});
 
 async function traerTodos(){
     const datos = await model.find()
-    db.disconnect();
     return datos;
 }
 
 async function traerUno(id){
-    const datos = await model.findOne();
-    db.disconnect();
+    const datos = await model.findById(id);
     return datos;
 }
 module.exports = {
